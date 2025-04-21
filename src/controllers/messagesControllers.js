@@ -1,4 +1,4 @@
-import pool from "../utilis/db";
+const pool = require('../utilis/db');
 
 exports.getMessages = async (req, res, next) => {
 
