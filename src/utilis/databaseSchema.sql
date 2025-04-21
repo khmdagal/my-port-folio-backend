@@ -40,3 +40,13 @@ CREATE TABLE collaborations (
     id SERIAL PRIMARY KEY,
     name TEXT
 );
+
+-- Create Tech Challenges table
+CREATE TABLE techChallenges(
+    id  SERIAL PRIMARY KEY,
+    situation  text,
+    task text,
+    action text,
+    result text,
+    date date
+);
