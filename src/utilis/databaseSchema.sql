@@ -50,3 +50,13 @@ CREATE TABLE techChallenges(
     result text,
     date date
 );
+
+-- Create feedback table
+
+CREATE TABLE feedback(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(250),
+    feedback TEXT,
+    rate INTEGER
+);
