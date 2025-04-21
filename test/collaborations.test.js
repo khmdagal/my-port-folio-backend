@@ -41,7 +41,6 @@ describe('collaboration Tools', () => {
         await getCollaborationTools(mockReq, mockRes, mockNext);
 
         // assert expected behaviour
-
-        expect(pool.query).toHaveBeenCalledWith(error);
+        expect(mockNext).toHaveBeenCalledWith(error)
     })
 })
