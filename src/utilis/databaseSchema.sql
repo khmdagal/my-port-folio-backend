@@ -53,7 +53,7 @@ CREATE TABLE techChallenges(
 
 -- Create feedback table
 
-CREATE TABLE feedback(
+CREATE TABLE feedbacks(
     id SERIAL PRIMARY KEY,
     name VARCHAR(100),
     email VARCHAR(250),
