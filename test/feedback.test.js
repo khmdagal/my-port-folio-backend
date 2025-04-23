@@ -1,4 +1,3 @@
-const { json } = require('stream/consumers');
 const { getFeedback, postFeedback } = require('../src/controllers/feedbackControllers');
 
 const pool = require('../src/utilis/db');
