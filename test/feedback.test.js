@@ -1,6 +1,8 @@
 const { getFeedback, postFeedback } = require('../src/controllers/feedbackControllers');
-
 const pool = require('../src/utilis/db');
+jest.mock('../src/utilis/db', () => ({
+    query: jest.fn(),
+}));
 
 const mockReq = {
 
@@ -12,11 +14,6 @@ const mockRes = {
 };
 
 const mockNext = jest.fn();
-
-jest.mock('../src/utilis/db', () => ({
-    query: jest.fn(),
-})
-);
 
 describe('feedback controller', () => {
     it('should get all feedbacks', async () => {

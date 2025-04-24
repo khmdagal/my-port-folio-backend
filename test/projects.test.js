@@ -1,7 +1,5 @@
 const { getProjects } = require('../src/controllers/projectsControllers')
-
 const pool = require('../src/utilis/db')
-
 jest.mock('../src/utilis/db', () => ({
     query: jest.fn()
 }));

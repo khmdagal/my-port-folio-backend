@@ -1,5 +1,8 @@
 const { getCollaborationTools } = require('../src/controllers/collaborationToolsControllers');
 const pool = require('../src/utilis/db');
+jest.mock('../src/utilis/db', () => ({
+    query: jest.fn(),
+}));
 
 const mockReq = {};
 const mockRes = {
@@ -7,12 +10,6 @@ const mockRes = {
     json: jest.fn()
 };
 const mockNext = jest.fn();
-
-jest.mock('../src/utilis/db', () => ({
-    query: jest.fn(),
-})
-);
-
 
 describe('collaboration Tools', () => {
     it('should return 200', async () => {

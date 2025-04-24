@@ -1,5 +1,8 @@
 const { getMessages } = require('../src/controllers/messagesControllers')
 const pool = require('../src/utilis/db')
+jest.mock('../src/utilis/db', () => ({
+    query: jest.fn()
+}));
 
 const mockReq = {};
 const mockRes = {
@@ -8,9 +11,6 @@ const mockRes = {
 };
 const mockNext = jest.fn();
 
-jest.mock('../src/utilis/db', () => ({
-    query: jest.fn()
-}));
 
 describe('Messages', () => {
     it('should return 200', async () => {
