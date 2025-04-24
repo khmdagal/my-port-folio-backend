@@ -31,7 +31,7 @@ describe('Messages', () => {
                 messages: 'Keep going, practice makes you better!!'
             }
         ];
-        pool.query.mockResolvedValue([fakeMessages]);
+        pool.query.mockResolvedValue({ rows: fakeMessages });
 
         // call controller function
         await getMessages(mockReq, mockRes, mockNext);
@@ -39,8 +39,9 @@ describe('Messages', () => {
         // assert required behaviour
         expect(pool.query).toHaveBeenCalledWith('SELECT * FROM messages');
         expect(mockRes.status).toHaveBeenCalledWith(200);
-        expect(mockRes.json({
+        expect(mockRes.json).toHaveBeenCalledWith({
+            status: 'success',
             result: fakeMessages
-        }));
+        })
     })
 })

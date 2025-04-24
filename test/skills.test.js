@@ -39,7 +39,7 @@ describe('Skills', () => {
         ]
 
         // mock the pool query as a referrence not as function request witht the resolved value of the facke data
-        pool.query.mockResolvedValue({rows:fackSkills})
+        pool.query.mockResolvedValue({ rows: fackSkills })
 
         // call the controller function
         await getSkills(mockReq, mockRes, mockNext)

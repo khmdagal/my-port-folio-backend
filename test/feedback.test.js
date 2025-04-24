@@ -37,7 +37,7 @@ describe('feedback controller', () => {
                 rate: 8
             }
         ];
-        pool.query.mockResolvedValue([fackFeedback]);
+        pool.query.mockResolvedValue({ rows: fackFeedback });
         // call the actuall controler function
 
         await getFeedback(mockReq, mockRes, mockNext);
@@ -45,8 +45,9 @@ describe('feedback controller', () => {
         // assert 
         expect(pool.query).toHaveBeenCalledWith('SELECT * FROM feedbacks');
         expect(mockRes.status).toHaveBeenCalledWith(200);
-        expect(mockRes.json({
+        expect(mockRes.json).toHaveBeenCalledWith({
+            status: 'success',
             result: fackFeedback
-        }))
+        })
     })
 })

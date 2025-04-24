@@ -38,7 +38,7 @@ describe('Projects', () => {
                 tech_stack: 'React.js, Ant Design, JavaScript, Node.js and PostgreSQL'
             }
         ]
-        pool.query.mockResolvedValue([fackProjects])
+        pool.query.mockResolvedValue({ rows: fackProjects })
 
         // call the controller function
         await getProjects(mockReq, mockRes, mockNext)
@@ -46,10 +46,10 @@ describe('Projects', () => {
 
         expect(pool.query).toHaveBeenCalledWith('SELECT * FROM projects')
         expect(mockRes.status).toHaveBeenCalledWith(200)
-        expect(mockRes.json({
+        expect(mockRes.json).toHaveBeenCalledWith({
             status: 'success',
             result: fackProjects
-        }))
+        })
 
     })
 });
