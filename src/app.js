@@ -7,7 +7,8 @@ const messagesRoutes = require('./routes/messagesRoutes');
 const projectsRoutes = require('./routes/projectsRoutes');
 const skillsRoutes = require('./routes/skillsRoutes');
 const techchallengesRoutes = require('./routes/techchallengesRoutes');
-const feedbackRoutes = require('./routes/feedbackRoutes')
+const feedbackRoutes = require('./routes/feedbackRoutes');
+const aboutMeRoutes = require('./routes/aboutMeRoutes')
 
 
 app.use(express.json());
@@ -25,6 +26,7 @@ app.use('/api/v1/projects', projectsRoutes);
 app.use('/api/v1/skills', skillsRoutes);
 app.use('/api/v1/techChallenges', techchallengesRoutes);
 app.use('/api/v1/feedbacks', feedbackRoutes);
+app.use('/api/v1/aboutme', aboutMeRoutes);
 
 
 module.exports = app;
