@@ -4,7 +4,7 @@ VALUES (
     'Kh',
     'D',
     'Junior Web Developer',
-    'I''m junior web Developer. I have designed, developed and deployed several projects ,and my mission is to embrace a journey of continuous learning, crafting innovative web applications, and effecting positive change. This mission follows my successful completion of a rigorous 9-month software development program at CodeYourFuture boot camp in Manchester.'
+    'I''m a junior web Developer and have designed, developed, and deployed several projects. My mission is to embark on a journey of continuous learning, crafting innovative web applications, and effecting positive change. This mission follows my successful completion of a rigorous 9-month software development program at the CodeYourFuture boot camp in Manchester.'
 );
 
 -- Insert technical skills its initial data
