@@ -3,6 +3,8 @@ CREATE TABLE about_me (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(100),
     last_name VARCHAR(100),
+    gitHub VARCHAR(100),
+    linkedIn VARCHAR(100),
     profession VARCHAR(100),
     about TEXT
 );
