@@ -1,5 +1,5 @@
 -- Insert into about_me its initial data
-INSERT INTO about_me (first_name, last_name, profession, about)
+INSERT INTO about_me (first_name, last_name, gitHub, linkedIn, profession, about)
 VALUES (
     'Kh',
     'D',
