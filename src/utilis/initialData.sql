@@ -3,6 +3,8 @@ INSERT INTO about_me (first_name, last_name, profession, about)
 VALUES (
     'Kh',
     'D',
+    'https://github.com/khmdagal',
+    'https://www.linkedin.com/in/kh-m-dagal/',
     'Junior Web Developer',
     'I''m a junior web Developer and have designed, developed, and deployed several projects. My mission is to embark on a journey of continuous learning, crafting innovative web applications, and effecting positive change. This mission follows my successful completion of a rigorous 9-month software development program at the CodeYourFuture boot camp in Manchester.'
 );
