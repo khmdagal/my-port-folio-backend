@@ -15,7 +15,7 @@ CREATE TABLE contact_me (
     name VARCHAR(100),
     email VARCHAR(250),
     subject VARCHAR(250),
-    message txt
+    message TEXT
 );
 -- Create the skills table (combined tech and soft skills)
 CREATE TABLE skills (
