@@ -1,0 +1,22 @@
+# Exported from Render on 2025-04-30T13:30:08Z
+services:
+- type: web
+  name: my-portfolio-backend
+  runtime: node
+  repo: https://github.com/khmdagal/my-port-folio-backend
+  plan: free
+  envVars:
+  - key: DB_PORT
+    sync: false
+  - key: DB_PASSWORD
+    sync: false
+  - key: DB_USER
+    sync: false
+  - key: DB_DATABASE
+    sync: false
+  - key: DB_HOST
+    sync: false
+  region: frankfurt
+  buildCommand: npm install
+  startCommand: node server.js
+version: "1"
