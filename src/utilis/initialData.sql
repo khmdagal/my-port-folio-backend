@@ -78,9 +78,10 @@ INSERT INTO collaborations (name) VALUES
 ('Teams');
 
 -- Insert techchallenges its initial data
-INSERT INTO techChallenges (situation, task, action, result, date) 
+INSERT INTO techChallenges (title, situation, task, action, result, date) 
 VALUES 
 (
+    'Form Submission Success but Data Missing in DB',
     'When selected the words to be assigned, they appeared in the correct format in the form, but didn’t make it to the database. The table wasn’t showing the words either.',
     'I had to debug where the problem was coming from and solve the issue.',
     'Started with GitHub commits for the setAssignment component. Checked backend logs and realized words were not reaching the server. Focused on the frontend and debugged the setAssignment component. Created a state variable `words`, used `useEffect()` to sync with `selectedWords`, and updated `formData` before submission.',
@@ -88,6 +89,7 @@ VALUES
     '2025-01-19'
 ),
 (
+    'Case-Sensitive File Path Broke Build on Deployment',
     'Build failed with error: Module not found: Can’t resolve ./pages/LogIn.',
     'I needed to identify the actual issue and fix the build error.',
     'Initially confused since the file appeared to exist. Then checked the deployed structure and noticed a casing mismatch: expected `LogIn` but found `Login`. Renamed the import path to match the actual file.',
@@ -95,6 +97,7 @@ VALUES
     '2025-01-08'
 ),
 (
+    'Wrong PR Target: Switching from Master to QA Branch',
     'Opened a pull request to the master branch instead of the QA branch after implementing XSS/CSP security features.',
     'Had to change the base branch of the PR safely to QA before merging.',
     'Researched GitHub documentation on changing the base branch. Clarified the meaning of base branch. Carefully followed the instructions to rebase and update the PR target branch.',
@@ -102,6 +105,7 @@ VALUES
     '2025-02-04'
 ),
 (
+    'Exploring Full-Stack Testing Frameworks',
     'Needed to choose the right tech stack to test my app both on the frontend and backend.',
     'Had to learn a variety of testing concepts and frameworks for both front-end and back-end.',
     'Created a dedicated branch `testing_branch`. Started researching on frontend and backend testing using resources like GeeksforGeeks.',
@@ -109,6 +113,7 @@ VALUES
     '2025-02-04'
 ),
 (
+    'Resolving ES Module Issues in Mocha/Chai Setup',
     'Faced issues running Mocha and Chai for backend testing. Errors included module not supported and incorrect import/export syntax.',
     'Understand and resolve the ES module vs CommonJS conflicts in the test setup.',
     'Installed Mocha and Chai as dev dependencies. Encountered errors related to ES modules. Learned that dynamic `import()` should be used or `"type": "module"` must be set in package.json. Updated the import style and fixed file paths.',
@@ -116,6 +121,7 @@ VALUES
     '2025-02-05'
 ),
 (
+    'Fixing Path Import Error in Node.js Server',
     'While working on my portfolio backend with time constraints, I got a module not found error related to incorrect pathing: .././routes/collaborationRoutes.',
     'Debug and fix the broken import to make the server run.',
     'Paused work to prioritize rest. Resumed next morning, read the Node.js error message, understood the path issue, and corrected the directory address in the import.',

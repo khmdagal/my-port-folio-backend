@@ -46,6 +46,7 @@ CREATE TABLE collaborations (
 -- Create Tech Challenges table
 CREATE TABLE techChallenges(
     id  SERIAL PRIMARY KEY,
+    title TEXT,
     situation  text,
     task text,
     action text,
