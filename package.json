@@ -21,8 +21,7 @@
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "node": "^23.11.0",
-    "pg": "^8.14.1",
-    "xss-clean": "^0.1.4"
+    "pg": "^8.14.1"
   },
   "devDependencies": {
     "jest": "^29.7.0",
