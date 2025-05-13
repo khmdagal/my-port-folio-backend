@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
 const app = express();
+
+const {prodOrigin} = require('./src/utilis/origins')
 
 const collaborationsRoutes = require('./src/routes/collaborationRoutes');
 const messagesRoutes = require('./src/routes/messagesRoutes');
@@ -12,14 +15,26 @@ const aboutMeRoutes = require('./src/routes/aboutMeRoutes')
 
 
 app.use(express.json());
-app.use(cors());
-
 app.use((req, res, next) => {
-    next()
-    console.log(req.baseUrl, req.headers['user-agent'])
-})
-//APIs
+    const origin = req.headers.origin;
+    if(origin !== `${prodOrigin}`){
+        return res.status(400).json({
+            status: 'fail',
+        });
+    }
+    next();
+});
 
+
+app.use(cors({
+    origin: `${prodOrigin}`,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
+app.use(helmet());
+
+//APIs
 app.use('/api/v1/collaborations', collaborationsRoutes);
 app.use('/api/v1/messages', messagesRoutes);
 app.use('/api/v1/projects', projectsRoutes);

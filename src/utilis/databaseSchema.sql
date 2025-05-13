@@ -57,9 +57,9 @@ CREATE TABLE techChallenges(
 -- Create feedback table
 
 CREATE TABLE feedbacks(
-    id SERIAL PRIMARY KEY,
+    id TEXT PRIMARY KEY UNIQUE,
     name VARCHAR(100),
     email VARCHAR(250),
     feedback TEXT,
-    rate INTEGER
+    rating INTEGER
 );
