@@ -12,7 +12,7 @@ exports.getFeedback = async (req, res, next) => {
 };
 
 exports.postFeedback = async (req, res, next) => {
-    const { id, name, email, feedback, rating } = req.body;
+    const {id, name, email, feedback, rating} = req.body;
 
     try {
         const postFeedback = await pool.query(`insert into feedbacks(id, name, email, feedback, rating) 
