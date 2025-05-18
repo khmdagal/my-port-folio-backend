@@ -1,7 +1,7 @@
 const pool = require('../utilis/db');
 exports.getFeedback = async (req, res, next) => {
     try {
-        const feedbacks = (await pool.query('SELECT * FROM feedbacks')).rows
+        const feedbacks = (await pool.query('SELECT feedback, rating FROM feedbacks')).rows
         res.status(200).json({
             status: 'success',
             result: feedbacks
