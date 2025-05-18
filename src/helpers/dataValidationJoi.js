@@ -1,10 +1,11 @@
 const Joi = require('joi');
 
 const feedbackSchema = Joi.object({
-    name: Joi.string().min(3).max(30).required(),
+    id: Joi.string().min(1).required(),
+    name: Joi.string().min(3).max(40).required(),
     email: Joi.string().email().required(),
     feedback: Joi.string().min(10).required(),
-    rating: Joi.number().integer().min(1).max(10).required()
+    rating: Joi.string().min(1).max(10).required()
 });
 
 exports.validateFeedback = (req, res, next) => {
@@ -19,7 +20,5 @@ exports.validateFeedback = (req, res, next) => {
         });
     }
     req.body = value; // Update the request body with the validated value
-    console.log('** from validation file **',req.body)
-    
     next();
 };
